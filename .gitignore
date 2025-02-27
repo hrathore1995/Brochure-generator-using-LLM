@@ -1,0 +1,23 @@
+# Ignore environment variables and API keys
+.env
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment (if applicable)
+venv/
+*.venv/
+
+# Ignore Streamlit logs and config files
+.streamlit/
+
+# Ignore system files (OS-specific)
+.DS_Store
+Thumbs.db
+
+# Ignore Selenium WebDriver downloaded files (optional)
+chromedriver
+chromedriver.exe
