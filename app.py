@@ -2,7 +2,8 @@ import streamlit as st
 from brochure import generate_brochure
 
 st.title("Brochure Generator")
-st.write("Enter a company website URL to generate a fun and engaging brochure.")
+st.write("Developed by Harshwardhan")
+st.write("Enter a company website URL to generate a professional and engaging brochure.")
 
 company_name = st.text_input("Company Name")
 url = st.text_input("Company Website URL")
