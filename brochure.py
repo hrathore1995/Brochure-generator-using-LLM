@@ -27,6 +27,8 @@ def get_dynamic_page_source(url):
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
+    #options.binary_location = "/usr/bin/google-chrome"
+
     service = Service(ChromeDriverManager().install())  # Install driver automatically
     driver = webdriver.Chrome(service=service, options=options)
 
@@ -112,8 +114,9 @@ def generate_brochure(company_name, url, language="English"):
         details += f"\n\n{link['type']}\n{Website(link['url']).get_contents()}"
 
     language_prompt = {
-        "English": "Generate a humorous brochure in English in markdown format.",
-        "Spanish": "Genera un folleto humorístico en español en formato markdown."
+        "English": "Generate a professional and engaging brochure in English for a company, formatted in markdown. Include headings for sections like 'Company Overview', 'Products', 'Contact Information', and 'Services'. Ensure proper use of bullet points, headings, and clear spacing for readability.",
+        "Spanish": "Genera un folleto profesional y atractivo en español para una empresa, formateado en markdown. Incluye encabezados para secciones como 'Visión General de la Empresa', 'Productos', 'Información de Contacto' y 'Servicios'. Asegúrate de usar correctamente los puntos de lista, los encabezados y un espaciado claro para facilitar la lectura."
+
     }
 
     response = openai.chat.completions.create(
